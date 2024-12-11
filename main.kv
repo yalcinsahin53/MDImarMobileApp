@@ -1,0 +1,65 @@
+<MainScreen>:
+    orientation: 'vertical'
+
+    # Üst Çubuk
+    MDBoxLayout:
+        size_hint_y: None
+        height: root.height * 0.08  # Dinamik yüksekliği ayarla
+        md_bg_color: 0.13, 0.40, 0.87, 1  # Deniz mavisi arkaplan
+        padding: 10
+
+        # Sol Üstte Menü Butonu
+        MDIconButton:
+            icon: 'menu'
+            on_press: print("Menü açıldı")
+
+        # Ortada Uygulama Başlık
+        MDLabel:
+            text: "İmar Durumu Sorgulama"
+            halign: 'center'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+
+    # Harita Alanı (FloatLayout kullanarak ayarlar butonunu da dahil edeceğiz)
+    FloatLayout:
+        id: map_area
+        size_hint: 1, 1  # Harita alanının tam yüksekliği ve genişliği kaplamasını sağla
+
+        MapView:
+            url: "https://www.openstreetmap.org"
+            lat: 40.9229  # Başlangıç olarak Rize'nin enlemi
+            lon: 40.8691  # Başlangıç olarak Rize'nin boylamı
+            zoom: 9
+            size_hint: 1, 1
+            pos_hint: {'top': 1}  # Üst çubuğa yapışık olacak şekilde yerleştir
+            double_tap_zoom: True
+
+        # Harita Altlık Değiştirme Butonu (transparan ve küçük kare boyutlarında)
+        MDIconButton:
+            icon: 'layers'
+            pos_hint: {'right': 1, 'top': 0.98}  # Sağa yaslanmış üst köşeye konumlandırma
+            md_bg_color: 1, 1, 1, 1
+            on_press: print("Ayarlar açıldı")
+
+
+    # Alt Çubuk
+    MDBoxLayout:
+        size_hint_y: None
+        height: root.height * 0.07  # Dinamik yükseklik
+        md_bg_color: 0.11, 0.89, 0.84, 1  # Yeşil arkaplan
+        spacing: 15
+
+
+        # Alt Araçlar
+        MDIconButton:
+            icon: 'reload'
+            on_press: print("Yenile")
+        MDIconButton:
+            icon: 'information'
+            on_press: print("Bilgi")
+        MDIconButton:
+            icon: 'star'
+            on_press: print("Favoriler")
+        MDIconButton:
+            icon: 'arrow-right'
+            on_press: print("İleri")
