@@ -11,7 +11,7 @@
         # Sol Üstte Menü Butonu
         MDIconButton:
             icon: 'menu'
-            on_press: print("Menü açıldı")
+            on_press: print("Menü açıldı?")
 
         # Ortada Uygulama Başlık
         MDLabel:
@@ -47,19 +47,31 @@
         size_hint_y: None
         height: root.height * 0.07  # Dinamik yükseklik
         md_bg_color: 0.11, 0.89, 0.84, 1  # Yeşil arkaplan
-        spacing: 15
+        spacing: 5
+        padding: [root.width / 10, 0, root.width / 10, 0]  # Butonları düzenli bir şekilde yerleştirmek için yatay boşluk ekle
+
+        MDGridLayout:
+            cols: 5  # Her platformda uygun bir düzen için sabit kolon sayısı
+            row_force_default: True
+            row_default_height: self.parent.height
+            col_force_default: True
+            col_default_width: self.parent.width / 5  # Genişliği MDBoxLayout genişliğine göre ayarla
+            adaptive_size: False
 
 
-        # Alt Araçlar
-        MDIconButton:
-            icon: 'reload'
-            on_press: print("Yenile")
-        MDIconButton:
-            icon: 'information'
-            on_press: print("Bilgi")
-        MDIconButton:
-            icon: 'star'
-            on_press: print("Favoriler")
-        MDIconButton:
-            icon: 'arrow-right'
-            on_press: print("İleri")
+            # Alt Araçlar
+            MDIconButton:
+                icon: 'reload'
+                on_press: print("Yenile")
+            MDIconButton:
+                icon: 'information'
+                on_press: print("Bilgi")
+            MDIconButton:
+                icon: 'star'
+                on_press: print("Favoriler")
+            MDIconButton:
+                icon: 'arrow-left'
+                on_press: print("İleri")
+            MDIconButton:
+                icon: 'arrow-right'
+                on_press: print("Geri")

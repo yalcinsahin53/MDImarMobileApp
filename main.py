@@ -11,6 +11,7 @@ from kivymd.uix.floatlayout import MDFloatLayout
 from kivy.lang import Builder  # .kv dosyasını manuel yüklemek için
 from kivy_garden.mapview import MapView
 
+
 # .kv dosyasını manuel olarak yükle
 Builder.load_file('main.kv')
 
@@ -19,13 +20,9 @@ class MainScreen(MDBoxLayout):
         mapview = MapView()
         return mapview
 
-
 class MapApp(MDApp):
     def build(self):
         return MainScreen()
 
 if __name__ == "__main__":
     MapApp().run()
-
-
-
