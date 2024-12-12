@@ -5,11 +5,17 @@ Config.set('graphics', 'width', '360')   # Genişlik (örnek: telefon çözünü
 Config.set('graphics', 'height', '640')  # Yükseklik (örnek: telefon çözünürlüğü)
 Config.set('graphics', 'resizable', True)  # Pencereyi yeniden boyutlandırılabilir yap
 
+
+
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.floatlayout import MDFloatLayout    
+from kivymd.uix.floatlayout import MDFloatLayout  
+from kivymd.uix.appbar import MDTopAppBar
+from kivymd.uix.appbar import MDBottomAppBar
 from kivy.lang import Builder  # .kv dosyasını manuel yüklemek için
 from kivy_garden.mapview import MapView
+from kivymd.uix.menu import MDDropdownMenu
+from kivy.metrics import dp
 
 
 # .kv dosyasını manuel olarak yükle
@@ -21,7 +27,26 @@ class MainScreen(MDBoxLayout):
         return mapview
 
 class MapApp(MDApp):
+
+    def menu_open(self):
+        menu_items = [
+            {
+                "text": f"Item {i}",
+                "on_release": lambda x=f"Item {i}": self.menu_callback(x),
+            } for i in range(5)
+        ]
+        MDDropdownMenu(
+            caller=self.root.ids.btnLayer,
+            items=menu_items,
+        ).open()
+
+    def menu_callback(self, text_item):
+        print(text_item)
+
     def build(self):
+        self.title="İmar Durumu Sorgulama"
+        self.theme_cls.theme_style = "Light"
+        self.theme_cls.primary_palette = "Olive"  # "Purple", "Red"
         return MainScreen()
 
 if __name__ == "__main__":

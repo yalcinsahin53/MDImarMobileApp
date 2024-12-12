@@ -1,4 +1,4 @@
-#!C:\KivyMDDownloadApp\myenv\Scripts\python.exe
+#!C:\MDImarMobileApp\myenv\Scripts\python.exe
 
 import sys
 import argparse
