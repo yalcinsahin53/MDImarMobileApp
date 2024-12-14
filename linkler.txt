@@ -1,0 +1,19 @@
+https://cbs.rizeozelidare.gov.tr/server/services/IDARE/KYA/MapServer/WMSServer
+
+
+URL'ler
+REST URL'si:	https://cbs.rizeozelidare.gov.tr/server/rest/services/IDARE/KYA/MapServer
+SOAP URL'si:	https://cbs.rizeozelidare.gov.tr/server/services/IDARE/KYA/MapServer
+
+
+
+
+
+https://cbs.rizeozelidare.gov.tr/server/services/IDARE/TKGM/MapServer/WMSServer
+
+URL'ler
+REST URL'si:	https://cbs.rizeozelidare.gov.tr/server/rest/services/IDARE/TKGM/MapServer
+SOAP URL'si:	https://cbs.rizeozelidare.gov.tr/server/services/IDARE/TKGM/MapServer
+
+
+

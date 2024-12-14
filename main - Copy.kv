@@ -2,7 +2,6 @@
     orientation: 'vertical'
     md_bg_color: self.theme_cls.backgroundColor
 
-
     # Üst Çubuk
     MDTopAppBar:
         type: "small"
@@ -13,7 +12,7 @@
 
             MDActionTopAppBarButton:
                 icon: "menu"
-                on_release: nav_drawer.set_state("toggle")
+                on_release: nav_drawer.set_state("toggle", animation=True)
 
         MDTopAppBarTitle:
             text: "Rize İl Özel İdaresi"
@@ -24,51 +23,86 @@
             MDActionTopAppBarButton:
                 icon: "dots-vertical"
 
+    MDNavigationLayout:
 
-    # Harita Alanı (FloatLayout kullanarak ayarlar butonunu da dahil edeceğiz)
-    FloatLayout:
-        id: map_area
-        size_hint: 1, 1  # Harita alanının tam yüksekliği ve genişliği kaplamasını sağla
+        MDScreenManager:
 
-        MapView:
-            url: "https://www.openstreetmap.org"
-            lat: 40.9229  # Başlangıç olarak Rize'nin enlemi
-            lon: 40.8691  # Başlangıç olarak Rize'nin boylamı
-            zoom: 9
-            size_hint: 1, 1
-            pos_hint: {'top': 1}  # Üst çubuğa yapışık olacak şekilde yerleştir
-            double_tap_zoom: True
+            MDScreen:
 
-        # Harita Altlık Değiştirme Butonu (transparan ve küçük kare boyutlarında)
-        MDIconButton:
-            id:btnLayer
-            icon: 'layers'
-            pos_hint: {'right': 1, 'top': 0.98}  # Sağa yaslanmış üst köşeye konumlandırma
-            md_bg_color: 1, 1, 1, 1
-            on_release: app.menu_open()
+                # Harita Alanı (FloatLayout kullanarak ayarlar butonunu da dahil edeceğiz)
+                FloatLayout:
+                    id: map_area
+                    size_hint: 1, 1  # Harita alanının tam yüksekliği ve genişliği kaplamasını sağla
+
+                    MapView:
+                        url: "https://www.openstreetmap.org"
+                        lat: 40.9229  # Başlangıç olarak Rize'nin enlemi
+                        lon: 40.8691  # Başlangıç olarak Rize'nin boylamı
+                        zoom: 9
+                        size_hint: 1, 1
+                        pos_hint: {'top': 1}  # Üst çubuğa yapışık olacak şekilde yerleştir
+                        double_tap_zoom: True
+
+                    # Harita Altlık Değiştirme Butonu (transparan ve küçük kare boyutlarında)
+                    MDIconButton:
+                        id:btnLayer
+                        icon: 'layers'
+                        pos_hint: {'right': 1, 'top': 0.98}  # Sağa yaslanmış üst köşeye konumlandırma
+                        md_bg_color: 1, 1, 1, 1
+                        on_release: app.menu_open()
+
+                # Alt Çubuk
+                MDBottomAppBar:    
+                    id: bottom_appbar
+                    allow_hidden: True
+                    theme_bg_color: "Custom"
+                    md_bg_color: "#232217"
+
+                    MDActionBottomAppBarButton:
+                        icon:"gmail"
+                        anchor: "left"
+                    MDActionBottomAppBarButton:
+                        icon:"bookmark"
+                        anchor: "left"
+                    MDActionBottomAppBarButton:
+                        icon:"information"
+                        anchor: "left"
+
+                    MDFabBottomAppBarButton:
+                        id: fab_button
+                        icon: "plus"
+                        theme_bg_color: "Custom"
+                        md_bg_color: "#373A22"
+                        theme_icon_color: "Custom"
+                        icon_color: "#ffffff"
 
 
-    # Alt Çubuk
-    MDBottomAppBar:    
-        id: bottom_appbar
-        allow_hidden: True
-        theme_bg_color: "Custom"
-        md_bg_color: "#232217"
 
-        MDActionBottomAppBarButton:
-            icon:"gmail"
-            anchor: "left"
-        MDActionBottomAppBarButton:
-            icon:"bookmark"
-            anchor: "left"
-        MDActionBottomAppBarButton:
-            icon:"information"
-            anchor: "left"
 
-        MDFabBottomAppBarButton:
-            id: fab_button
-            icon: "plus"
-            theme_bg_color: "Custom"
-            md_bg_color: "#373A22"
-            theme_icon_color: "Custom"
-            icon_color: "#ffffff"
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: 0, dp(16), dp(16), 0
+
+            MDNavigationDrawerMenu:
+
+                MDNavigationDrawerLabel:
+                    text: "Mail"
+
+                MDNavigationDrawerItem:
+
+                    MDNavigationDrawerItemLeadingIcon:
+                        icon: "account"
+
+                    MDNavigationDrawerItemText:
+                        text: "Inbox"
+
+                    MDNavigationDrawerItemTrailingText:
+                        text: "24"
+
+                MDNavigationDrawerDivider:
+
+
+
+
+

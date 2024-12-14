@@ -10,18 +10,12 @@ Config.set('graphics', 'resizable', True)  # Pencereyi yeniden boyutlandırılab
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.floatlayout import MDFloatLayout  
-from kivymd.uix.appbar import MDTopAppBar
-from kivymd.uix.appbar import MDBottomAppBar
+from kivymd.uix.appbar import MDTopAppBar, MDBottomAppBar
 from kivy.lang import Builder  # .kv dosyasını manuel yüklemek için
 from kivy_garden.mapview import MapView
 from kivy_garden.mapview import MapView, MapSource
 from kivymd.uix.menu import MDDropdownMenu
 from kivy.metrics import dp
-from kivy.properties import StringProperty, ColorProperty
-from kivymd.uix.navigationdrawer import (
-    MDNavigationDrawerItem, MDNavigationDrawerItemTrailingText
-    )
-
 
 # .kv dosyasını manuel olarak yükle
 Builder.load_file('main.kv')
