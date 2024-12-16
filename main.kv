@@ -35,7 +35,7 @@
                     size_hint: 1, 1  # Harita alanının tam yüksekliği ve genişliği kaplamasını sağla
 
                     MapView:
-                        id: map_view
+                        id: mainmapview
                         url: "https://www.openstreetmap.org"
                         lat: 40.9229  # Başlangıç olarak Rize'nin enlemi
                         lon: 40.8691  # Başlangıç olarak Rize'nin boylamı
@@ -84,7 +84,6 @@
         MDNavigationDrawer:
             id: nav_drawer
             radius: 0, dp(16), dp(16), 0
-            drawer_type: "modal"
 
             MDNavigationDrawerMenu:
 
