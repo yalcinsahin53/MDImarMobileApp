@@ -1,0 +1,97 @@
+MDScreen:
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Harita Uygulaması"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["menu", lambda x: None]]
+
+        MDFloatLayout:
+            id: map_layout
+            MapView:
+                id: map_view
+                lat: 41.0238
+                lon: 39.7150
+                zoom: 10
+
+            MDIconButton:
+                icon: "map-marker-radius"
+                pos_hint: {"center_x": 0.95, "center_y": 0.8}
+                on_release: print("Konum")
+
+            MDIconButton:
+                icon: "hand-right"
+                pos_hint: {"center_x": 0.95, "center_y": 0.7}
+                on_release: print("El hareketi")
+
+            MDIconButton:
+                icon: "arrow-left-bold"
+                pos_hint: {"center_x": 0.95, "center_y": 0.6}
+                on_release: print("Geri")
+
+            MDIconButton:
+                icon: "arrow-right-bold"
+                pos_hint: {"center_x": 0.95, "center_y": 0.5}
+                on_release: print("İleri")
+
+            MDIconButton:
+                icon: "home"
+                pos_hint: {"center_x": 0.95, "center_y": 0.4}
+                on_release: print("Ana sayfa")
+
+            MDIconButton:
+                icon: "plus"
+                pos_hint: {"center_x": 0.95, "center_y": 0.3}
+                on_release: root.ids.map_view.zoom_in()
+
+            MDIconButton:
+                icon: "minus"
+                pos_hint: {"center_x": 0.95, "center_y": 0.2}
+                on_release: root.ids.map_view.zoom_out()
+
+            MDIconButton:
+                icon: "target"
+                pos_hint: {"center_x": 0.95, "center_y": 0.1}
+                on_release: print("Hedef")
+
+            MDIconButton:
+                icon: "information"
+                pos_hint: {"center_x": 0.05, "center_y": 0.9}
+                on_release: print("Bilgi")
+
+            MDIconButton:
+                icon: "filter-variant"
+                pos_hint: {"center_x": 0.05, "center_y": 0.8}
+                on_release: print("Filtre")
+
+            MDIconButton:
+                icon: "pencil"
+                pos_hint: {"center_x": 0.05, "center_y": 0.7}
+                on_release: print("Düzenle")
+
+            MDIconButton:
+                icon: "delete"
+                pos_hint: {"center_x": 0.05, "center_y": 0.6}
+                on_release: print("Sil")
+
+            MDIconButton:
+                icon: "account"
+                pos_hint: {"center_x": 0.05, "center_y": 0.5}
+                on_release: print("Profil")
+
+            MDIconButton:
+                icon: "settings"
+                pos_hint: {"center_x": 0.05, "center_y": 0.4}
+                on_release: print("Ayarlar")
+
+            MDIconButton:
+                icon: "help"
+                pos_hint: {"center_x": 0.05, "center_y": 0.3}
+                on_release: print("Yardım")
+
+            MDLabel:
+                text: "Mapisso"
+                font_style: "H6"
+                halign: "left"
+                pos_hint: {"center_x": 0.1, "center_y": 0.1}

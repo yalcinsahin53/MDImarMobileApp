@@ -1,0 +1,11 @@
+        service_data = [
+            {"name": "EsriWorldImagery", "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"},
+            {"name": "EsriBasemap", "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"},
+            {"name": "EsriTopograpyMap", "url": "http://services.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"},
+            {"name": "OpenStreetMap", "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"},
+            {"name": "OpenTopoMaps", "url": "https://tile.opentopomap.org/{z}/{x}/{y}.png"},
+            {"name": "GoogleSatallite", "url": "http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}"},
+            {"name": "GoogleMaps", "url": "https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}"},
+            {"name": "GoogleRoads", "url": "https://mt1.google.com/vt/lyrs=h&x={x}&y={y}&z={z}"},
+            {"name": "GoogleSatalliteHybrid", "url": "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"},            
+        ]

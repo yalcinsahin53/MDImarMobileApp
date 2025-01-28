@@ -18,7 +18,7 @@ from kivymd.uix.menu import MDDropdownMenu
 from kivy.metrics import dp
 
 # .kv dosyasını manuel olarak yükle
-Builder.load_file('main.kv')
+Builder.load_file('main - Copy.kv')
 
 class MainScreen(MDBoxLayout):
     def build(self):

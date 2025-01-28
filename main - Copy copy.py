@@ -24,7 +24,7 @@ from kivymd.uix.navigationdrawer import (
 
 
 # .kv dosyasını manuel olarak yükle
-Builder.load_file('main.kv')
+Builder.load_file('main - Copy copy.kv')
 
 class MainScreen(MDBoxLayout):
     def build(self):
